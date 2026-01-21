@@ -1,0 +1,13 @@
+# Build artifacts
+*.exe
+*.out
+*.o
+build/
+bin/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
