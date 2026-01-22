@@ -17,13 +17,13 @@ int main(){
 
     Event event1(1, currentTime, EventType::ACCOUNT_OPEN, "Account Opened");
 
-    // Event event2(2, currentTime, "File Uploaded");
-    // Event event3(3, currentTime, "Data processed");
+    Event event2(2, currentTime, EventType::DEPOSIT, "Fund Deposited");
+    Event event3(3, currentTime, EventType::TRANSFER, "Fund Transfered");
 
  
     events.push_back(event1);
-    // events.push_back(event2);
-    // events.push_back(event3);
+    events.push_back(event2);
+    events.push_back(event3);
 
     int eSize = events.size();
     for(int i=0; i<eSize; i++){
