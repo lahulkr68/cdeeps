@@ -1,17 +1,15 @@
 #include "event_config.h"
 
-bool EventConfig::isEnabled(EventType type){
-    switch (type){
-        case EventType::ACCOUNT_OPEN:
-            return true;
-        
-        case EventType::DEPOSIT:
-            return false;
-        
-        case EventType::TRANSFER:
-            return true;
-        
-        default:
-            return false;
+void EventConfig::loadMapping() {
+    handlerMapping[EventType::ACCOUNT_OPEN] = "PrintHandler";
+    handlerMapping[EventType::DEPOSIT] = "PrintHandler";
+    handlerMapping[EventType::TRANSFER] = "PrintHandler";
+}
+
+std::string EventConfig::getHandlerName(EventType type) const {
+    auto it = handlerMapping.find(type);
+    if (it != handlerMapping.end()) {
+        return it->second;
     }
+    return "UnknownHandler";  // Default if not found
 }
